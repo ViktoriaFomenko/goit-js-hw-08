@@ -27,4 +27,4 @@ function createGalleryItemsMarkup(galleryItems) {
     .join('');
 }
 
-new SimpleLightbox('.gallery a', { captionDelay: 250 });
+const lightbox = new SimpleLightbox('.gallery a', { captionDelay: 250 });
