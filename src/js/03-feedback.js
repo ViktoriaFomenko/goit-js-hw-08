@@ -10,7 +10,9 @@ const formKey = 'feedback-form-state';
 refs.form.addEventListener('input', throttle(onInput, 500));
 refs.form.addEventListener('submit', onSubmit);
 
-function onInput(event) {
+formDataUpdate();
+
+function onInput() {
   const result = getFormData();
   const formResult = JSON.stringify(result);
   localStorage.setItem(formKey, formResult);
@@ -32,7 +34,6 @@ function onSubmit(event) {
   refs.form.reset();
 }
 
-formDataUpdate();
 function formDataUpdate() {
   const storedData = localStorage.getItem(formKey);
   if (storedData) {
