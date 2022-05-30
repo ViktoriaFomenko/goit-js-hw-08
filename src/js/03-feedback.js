@@ -29,11 +29,12 @@ function getFormData() {
 
 function onSubmit(event) {
   event.preventDefault();
-  if (refs.email.value === '' || refs.message.value === '') {
-    return;
-  }
   console.log(getFormData());
   localStorage.removeItem(formKey);
+  let { email, message } = refs.form.elements;
+  if (email.value === '' || message.value === '') {
+    return;
+  }
   refs.form.reset();
 }
 
